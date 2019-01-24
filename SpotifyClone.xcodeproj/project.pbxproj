@@ -18,8 +18,11 @@
 		84EC47D921F893460031EFE3 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EC47D821F893460031EFE3 /* Home.storyboard */; };
 		84EC47DB21F894710031EFE3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EC47DA21F894710031EFE3 /* HomeViewController.swift */; };
 		84EC47E321F8A6A60031EFE3 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EC47E221F8A6A60031EFE3 /* HomeCell.swift */; };
-		84EC47E521F8A6F70031EFE3 /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EC47E421F8A6F70031EFE3 /* AlbumCell.swift */; };
+		84EC47E521F8A6F70031EFE3 /* PlaylistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EC47E421F8A6F70031EFE3 /* PlaylistCell.swift */; };
 		84EC47E821F8D9AF0031EFE3 /* proxima.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84EC47E721F8D8C70031EFE3 /* proxima.ttf */; };
+		84EC47EB21F9AADB0031EFE3 /* PlaylistCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EC47EA21F9AADB0031EFE3 /* PlaylistCategory.swift */; };
+		84EC47ED21F9C1080031EFE3 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EC47EC21F9C1080031EFE3 /* LibraryViewController.swift */; };
+		84EC47EF21F9C1FC0031EFE3 /* Library.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EC47EE21F9C1FC0031EFE3 /* Library.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,8 +39,11 @@
 		84EC47D821F893460031EFE3 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		84EC47DA21F894710031EFE3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		84EC47E221F8A6A60031EFE3 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
-		84EC47E421F8A6F70031EFE3 /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
+		84EC47E421F8A6F70031EFE3 /* PlaylistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCell.swift; sourceTree = "<group>"; };
 		84EC47E721F8D8C70031EFE3 /* proxima.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = proxima.ttf; sourceTree = "<group>"; };
+		84EC47EA21F9AADB0031EFE3 /* PlaylistCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCategory.swift; sourceTree = "<group>"; };
+		84EC47EC21F9C1080031EFE3 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
+		84EC47EE21F9C1FC0031EFE3 /* Library.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Library.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,11 +76,13 @@
 		84EC47BF21F88F080031EFE3 /* SpotifyClone */ = {
 			isa = PBXGroup;
 			children = (
+				84EC47E921F9AAC30031EFE3 /* Models */,
 				84EC47C021F88F080031EFE3 /* AppDelegate.swift */,
 				84EC47DD21F89BF20031EFE3 /* Controllers */,
 				84EC47DC21F89BDF0031EFE3 /* Coordinator */,
 				84EC47E621F8A7050031EFE3 /* Cells */,
 				84EC47D621F88FE50031EFE3 /* Storyboarded.swift */,
+				84EC47EE21F9C1FC0031EFE3 /* Library.storyboard */,
 				84EC47C421F88F080031EFE3 /* Main.storyboard */,
 				84EC47D821F893460031EFE3 /* Home.storyboard */,
 				84EC47E721F8D8C70031EFE3 /* proxima.ttf */,
@@ -99,6 +107,7 @@
 			children = (
 				84EC47C221F88F080031EFE3 /* SearchViewController.swift */,
 				84EC47DA21F894710031EFE3 /* HomeViewController.swift */,
+				84EC47EC21F9C1080031EFE3 /* LibraryViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -106,10 +115,18 @@
 		84EC47E621F8A7050031EFE3 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				84EC47E421F8A6F70031EFE3 /* AlbumCell.swift */,
+				84EC47E421F8A6F70031EFE3 /* PlaylistCell.swift */,
 				84EC47E221F8A6A60031EFE3 /* HomeCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		84EC47E921F9AAC30031EFE3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				84EC47EA21F9AADB0031EFE3 /* PlaylistCategory.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +191,7 @@
 				84EC47E821F8D9AF0031EFE3 /* proxima.ttf in Resources */,
 				84EC47C821F88F090031EFE3 /* Assets.xcassets in Resources */,
 				84EC47C621F88F080031EFE3 /* Main.storyboard in Resources */,
+				84EC47EF21F9C1FC0031EFE3 /* Library.storyboard in Resources */,
 				84EC47D921F893460031EFE3 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -186,10 +204,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				84EC47C321F88F080031EFE3 /* SearchViewController.swift in Sources */,
+				84EC47EB21F9AADB0031EFE3 /* PlaylistCategory.swift in Sources */,
 				84EC47E321F8A6A60031EFE3 /* HomeCell.swift in Sources */,
 				84EC47D521F88FB40031EFE3 /* MainCoordinator.swift in Sources */,
-				84EC47E521F8A6F70031EFE3 /* AlbumCell.swift in Sources */,
+				84EC47E521F8A6F70031EFE3 /* PlaylistCell.swift in Sources */,
 				84EC47D721F88FE50031EFE3 /* Storyboarded.swift in Sources */,
+				84EC47ED21F9C1080031EFE3 /* LibraryViewController.swift in Sources */,
 				84EC47C121F88F080031EFE3 /* AppDelegate.swift in Sources */,
 				84EC47D321F88F900031EFE3 /* Coordinator.swift in Sources */,
 				84EC47DB21F894710031EFE3 /* HomeViewController.swift in Sources */,

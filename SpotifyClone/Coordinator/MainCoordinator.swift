@@ -42,7 +42,7 @@ class MainCoordinator: Coordinator {
         
         navigationController.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController.navigationBar.shadowImage = UIImage()
-        
+        navigationController.addChild(tabBarController)
             //Back to default navigation bar
 //            navigationController.navigationBar.setBackgroundImage(nil, for: .default)
 //            navigationController?.navigationBar.shadowImage = nil
@@ -50,19 +50,25 @@ class MainCoordinator: Coordinator {
         
         let homeTabBarItem = UITabBarItem(title: "Home", image: #imageLiteral(resourceName: "home"), selectedImage: #imageLiteral(resourceName: "home"))
         let searchTabBarItem = UITabBarItem(title: "Search", image: #imageLiteral(resourceName: "search"), selectedImage: #imageLiteral(resourceName: "search"))
+        let libraryTabBarItem = UITabBarItem(title: "Your Library", image: #imageLiteral(resourceName: "library"), selectedImage: #imageLiteral(resourceName: "library"))
         tabBarController.tabBar.backgroundColor = #colorLiteral(red: 0.1812143084, green: 0.1812143084, blue: 0.1812143084, alpha: 1)
         tabBarController.tabBar.barTintColor = #colorLiteral(red: 0.1812143084, green: 0.1812143084, blue: 0.1812143084, alpha: 1)
         tabBarController.tabBar.tintColor = .white
         
-        let searchVc = SearchViewController.mainInstantiate()
+        let homeVc = HomeViewController.instantiate(storyboardName: "Home")
+        homeVc.coordinator = self
+        homeVc.tabBarItem = homeTabBarItem
+
+        let searchVc = SearchViewController.instantiate(storyboardName: "Main")
         searchVc.coordinator = self
         searchVc.tabBarItem = searchTabBarItem
         
-        let homeVc = HomeViewController.homeInstantiate()
-        homeVc.coordinator = self
-        homeVc.tabBarItem = homeTabBarItem
-        navigationController.addChild(tabBarController)
-        tabBarController.setViewControllers([homeVc, searchVc], animated: true)
+        
+        let libraryVc = LibraryViewController.instantiate(storyboardName: "Library")
+        libraryVc.coordinator = self
+        libraryVc.tabBarItem = libraryTabBarItem
+        
+        tabBarController.setViewControllers([homeVc, searchVc, libraryVc], animated: true)
     }
     
     

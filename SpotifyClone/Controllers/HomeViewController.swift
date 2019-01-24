@@ -10,12 +10,22 @@ import UIKit
 
 class HomeViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, Storyboarded {
 
+    
     weak var coordinator: MainCoordinator?
+    var playlistCategories: [PlaylistCategory]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .black
+        playlistCategories = PlaylistCategory.sampleData()
+        PlaylistCategory.getPosts(for: 1) { (posts) in
+            print(posts)
+        }
         collectionView.backgroundColor = .black
+        setNeedsStatusBarAppearanceUpdate()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -24,12 +34,14 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! HomeCell
-        
+        let playlistCategory = playlistCategories?[indexPath.item]
+        cell.playlistCategory = playlistCategory
         return cell
     }
     
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        guard let count = playlistCategories?.count else {return 0}
+        return count
     }
 }

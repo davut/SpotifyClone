@@ -10,6 +10,13 @@ import UIKit
 
 class HomeCell: UICollectionViewCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
+    var playlistCategory: PlaylistCategory? {
+        didSet {
+            guard let name = playlistCategory?.name else {return}
+            bigTitle.text = name
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
@@ -39,7 +46,7 @@ class HomeCell: UICollectionViewCell, UICollectionViewDataSource, UICollectionVi
         label.textColor = .white
         label.font = UIFont.init(name: "ProximaNova-Bold", size: 20)
         label.textAlignment = .center
-        label.text = "Popular playlists"
+//        label.text = "Popular playlists"
         return label
     }()
     
@@ -50,7 +57,7 @@ class HomeCell: UICollectionViewCell, UICollectionViewDataSource, UICollectionVi
         bigTitle.frame = CGRect(x: 8, y: 0, width: UIScreen.main.bounds.width, height: 20)
         albumsCollectionView.delegate = self
         albumsCollectionView.dataSource = self
-        albumsCollectionView.register(AlbumCell.self, forCellWithReuseIdentifier: "cell")
+        albumsCollectionView.register(PlaylistCell.self, forCellWithReuseIdentifier: "cell")
         
     }
     
@@ -59,7 +66,8 @@ class HomeCell: UICollectionViewCell, UICollectionViewDataSource, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        guard let count = playlistCategory?.playlists?.count else {return 0}
+        return count
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -67,8 +75,9 @@ class HomeCell: UICollectionViewCell, UICollectionViewDataSource, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = albumsCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! AlbumCell
-        
+        let cell = albumsCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! PlaylistCell
+        let playlistName = playlistCategory?.playlists?[indexPath.item]
+        cell.playlist = playlistName
         return cell
     }
 }

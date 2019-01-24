@@ -13,17 +13,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var coordinator: MainCoordinator? = nil
     var window: UIWindow?
-
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-//        let tabBarController = UITabBarController()
-//        tabBarController.tabBar.backgroundColor = #colorLiteral(red: 0.1812143084, green: 0.1812143084, blue: 0.1812143084, alpha: 1)
-//        tabBarController.tabBar.barTintColor = #colorLiteral(red: 0.1812143084, green: 0.1812143084, blue: 0.1812143084, alpha: 1)
-//        tabBarController.tabBar.tintColor = .white
-//        coordinator = MainCoordinator(tabBarController: tabBarController)
-//        coordinator?.start()
+
         let navContr = UINavigationController()
         coordinator = MainCoordinator(navController: navContr)
         coordinator?.start()
