@@ -14,10 +14,10 @@ class PlaylistCell: UICollectionViewCell {
         didSet {
             guard let playlist = playlist else {print("No Playlist available"); return}
             playlistTitle.text = playlist.name
-            guard let playlistImageName = playlist.imageName else {print("No ImageName available"); return}
+            guard let playlistImageName = playlist.image else {print("No ImageName available"); return}
             playlistImageView.image = UIImage(named: playlistImageName)
             guard let playlistFollowers = playlist.followers else {print("No followers available"); return}
-            followersLabel.text = "\(playlistFollowers) FOLLOWERS"
+            followersLabel.text = playlistFollowers.isEmpty ? "" : "\(playlistFollowers) FOLLOWERS"
         }
     }
     
@@ -63,6 +63,8 @@ class PlaylistCell: UICollectionViewCell {
         addSubview(playlistTitle)
         addSubview(followersLabel)
         playlistImageView.frame = CGRect(x: 0, y: 0, width: frame.width, height: frame.width)
+        // For Artists
+        // playlistImageView.layer.cornerRadius = frame.width / 2
         playlistTitle.frame = CGRect(x: 0, y: frame.width + 2, width: frame.width, height: 20)
         followersLabel.frame = CGRect(x: 0, y: frame.width + 22, width: frame.width, height: 20)
     }

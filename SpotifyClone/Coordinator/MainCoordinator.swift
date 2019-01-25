@@ -8,24 +8,9 @@
 
 import UIKit
 
-//class MainCoordinator: Coordinator {
-//    var tabBarController: UITabBarController
-//
-//    init(tabBarController: UITabBarController) {
-//        self.tabBarController = tabBarController
-//    }
-//
-//    func start() {
-//        let homeTabBarItem = UITabBarItem(title: "Home", image: #imageLiteral(resourceName: "home"), selectedImage: #imageLiteral(resourceName: "home"))
-//        let searchTabBarItem = UITabBarItem(title: "Search", image: #imageLiteral(resourceName: "search"), selectedImage: #imageLiteral(resourceName: "search"))
-//        let vc = SearchViewController.mainInstantiate()
-////        vc.coordinator = self
-//        vc.tabBarItem = searchTabBarItem
-//
-//        let homeVc = HomeViewController.homeInstantiate()
-////        homeVc.coordinator = self
-//        homeVc.tabBarItem = homeTabBarItem
-//        tabBarController.setViewControllers([homeVc, vc], animated: true)
+//class TabBarController: UITabBarController {
+//    override var preferredStatusBarStyle: UIStatusBarStyle {
+//        return .lightContent
 //    }
 //}
 

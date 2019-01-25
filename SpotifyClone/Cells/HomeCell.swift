@@ -10,10 +10,11 @@ import UIKit
 
 class HomeCell: UICollectionViewCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    var playlistCategory: PlaylistCategory? {
+    var collection: Collection? {
         didSet {
-            guard let name = playlistCategory?.name else {return}
+            guard let name = collection?.name else {return}
             bigTitle.text = name
+//            self.albumsCollectionView.reloadData()
         }
     }
     
@@ -66,7 +67,7 @@ class HomeCell: UICollectionViewCell, UICollectionViewDataSource, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let count = playlistCategory?.playlists?.count else {return 0}
+        guard let count = collection?.playlists?.count else {return 0}
         return count
     }
     
@@ -76,7 +77,7 @@ class HomeCell: UICollectionViewCell, UICollectionViewDataSource, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = albumsCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! PlaylistCell
-        let playlistName = playlistCategory?.playlists?[indexPath.item]
+        let playlistName = collection?.playlists?[indexPath.item]
         cell.playlist = playlistName
         return cell
     }
