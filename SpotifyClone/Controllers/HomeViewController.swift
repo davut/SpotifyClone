@@ -24,12 +24,13 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let statusBar = UIApplication.shared.value(forKey: "statusBar") as? UIView {
-            statusBar.backgroundColor = UIColor.black
-            statusBar.alpha = 0.5
-        }
+
+//        if let statusBar = UIApplication.shared.value(forKey: "statusBar") as? UIView {
+//            statusBar.backgroundColor = UIColor.black
+//            statusBar.alpha = 0.5
+//        }
         
-        PlaylistCategory.loadData { (data) in
+        DataSource.loadData { (data) in
             self.collections = data?.collections
             DispatchQueue.main.async {
 //                let height = self.collectionView.collectionViewLayout.collectionViewContentSize.height

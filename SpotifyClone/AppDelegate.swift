@@ -18,11 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         UIApplication.shared.statusBarStyle = .lightContent
         
-        let navContr = UINavigationController()
-        coordinator = MainCoordinator(navController: navContr)
+//        let navContr = UINavigationController()
+        let tabBarController = UITabBarController()
+        coordinator = MainCoordinator(tabBarController: tabBarController)
         coordinator?.start()
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = navContr
+        window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
         
         return true

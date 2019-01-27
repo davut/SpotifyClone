@@ -25,7 +25,7 @@ class SearchViewController: UICollectionViewController, UICollectionViewDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        PlaylistCategory.loadData { (data) in
+        DataSource.loadData { (data) in
             self.collections = data?.collections
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
