@@ -42,9 +42,6 @@ class MainCoordinator: Coordinator {
         searchVc.tabBarItem = searchTabBarItem
         let searchNavigationController = UINavigationController(rootViewController: searchVc)
         setSearchViewControllerTo(navigationItem: searchVc.navigationItem, navigationBar: searchNavigationController.navigationBar)
-//        setupNavigationBar(navigationController: searchNavigationController)
-        
-        
         
         let libraryVc = LibraryViewController.instantiate(storyboardName: "Library")
         libraryVc.coordinator = self
