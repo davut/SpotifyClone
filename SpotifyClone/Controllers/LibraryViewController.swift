@@ -9,7 +9,7 @@
 import UIKit
 
 class LibraryViewController: UIViewController, Storyboarded {
-    weak var coordinator: MainCoordinator?
+    weak var coordinator: LibraryCoordinator?
     
     override func viewDidLoad() {
         super.viewDidLoad()

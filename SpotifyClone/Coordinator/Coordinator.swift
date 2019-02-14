@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol Coordinator {
-    var tabBarController: UITabBarController {get set}
-    func start()
+protocol Coordinator: AnyObject {
+    var navigationController: UINavigationController {get set}
 }
+

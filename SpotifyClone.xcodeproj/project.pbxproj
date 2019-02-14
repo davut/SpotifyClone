@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		845AF40D2212CFC100442185 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845AF40C2212CFC100442185 /* MainTabBarController.swift */; };
+		845AF40F2212D0DA00442185 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845AF40E2212D0DA00442185 /* HomeCoordinator.swift */; };
+		845AF4112212D57800442185 /* SearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845AF4102212D57800442185 /* SearchCoordinator.swift */; };
+		845AF4132212D5A600442185 /* LibraryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845AF4122212D5A600442185 /* LibraryCoordinator.swift */; };
 		84EC47C121F88F080031EFE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EC47C021F88F080031EFE3 /* AppDelegate.swift */; };
 		84EC47C321F88F080031EFE3 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EC47C221F88F080031EFE3 /* SearchViewController.swift */; };
 		84EC47C621F88F080031EFE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EC47C421F88F080031EFE3 /* Main.storyboard */; };
@@ -30,6 +34,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		845AF40C2212CFC100442185 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		845AF40E2212D0DA00442185 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		845AF4102212D57800442185 /* SearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoordinator.swift; sourceTree = "<group>"; };
+		845AF4122212D5A600442185 /* LibraryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryCoordinator.swift; sourceTree = "<group>"; };
 		84EC47BD21F88F080031EFE3 /* SpotifyClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotifyClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84EC47C021F88F080031EFE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84EC47C221F88F080031EFE3 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +113,9 @@
 		84EC47DC21F89BDF0031EFE3 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				845AF40E2212D0DA00442185 /* HomeCoordinator.swift */,
+				845AF4102212D57800442185 /* SearchCoordinator.swift */,
+				845AF4122212D5A600442185 /* LibraryCoordinator.swift */,
 				84EC47D221F88F900031EFE3 /* Coordinator.swift */,
 				84EC47D421F88FB40031EFE3 /* MainCoordinator.swift */,
 			);
@@ -114,6 +125,7 @@
 		84EC47DD21F89BF20031EFE3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				845AF40C2212CFC100442185 /* MainTabBarController.swift */,
 				84EC47C221F88F080031EFE3 /* SearchViewController.swift */,
 				84EC47DA21F894710031EFE3 /* HomeViewController.swift */,
 				84EC47EC21F9C1080031EFE3 /* LibraryViewController.swift */,
@@ -217,16 +229,20 @@
 			files = (
 				84EC47C321F88F080031EFE3 /* SearchViewController.swift in Sources */,
 				84EC47EB21F9AADB0031EFE3 /* PlaylistCategory.swift in Sources */,
+				845AF4112212D57800442185 /* SearchCoordinator.swift in Sources */,
+				845AF40D2212CFC100442185 /* MainTabBarController.swift in Sources */,
 				84EC47E321F8A6A60031EFE3 /* HomeCell.swift in Sources */,
 				84FDDC1721FCB6BE00152D6C /* Playlist.swift in Sources */,
 				84EC47D521F88FB40031EFE3 /* MainCoordinator.swift in Sources */,
 				84EC47E521F8A6F70031EFE3 /* PlaylistCell.swift in Sources */,
+				845AF4132212D5A600442185 /* LibraryCoordinator.swift in Sources */,
 				84EC47D721F88FE50031EFE3 /* Storyboarded.swift in Sources */,
 				84FDDC1521FCB6A800152D6C /* Collection.swift in Sources */,
 				84EC47ED21F9C1080031EFE3 /* LibraryViewController.swift in Sources */,
 				84FDDC1321FCB69900152D6C /* Data.swift in Sources */,
 				84EC47C121F88F080031EFE3 /* AppDelegate.swift in Sources */,
 				84EC47D321F88F900031EFE3 /* Coordinator.swift in Sources */,
+				845AF40F2212D0DA00442185 /* HomeCoordinator.swift in Sources */,
 				84FDDC1121FCB61400152D6C /* DataSource.swift in Sources */,
 				84EC47DB21F894710031EFE3 /* HomeViewController.swift in Sources */,
 			);

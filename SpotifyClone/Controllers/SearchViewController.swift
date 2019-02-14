@@ -75,8 +75,8 @@ class SearchViewController: UICollectionViewController, UICollectionViewDelegate
     
     var playlistDiscover: Playlist = {
         var playlist = Playlist()
-        playlist.name = "Podcasts"
-        playlist.image = "pink"
+        playlist.name = "Discover"
+        playlist.image = "Purplin"
         return playlist
     }()
     
@@ -87,7 +87,7 @@ class SearchViewController: UICollectionViewController, UICollectionViewDelegate
         return collection
     }()
     
-    weak var coordinator: MainCoordinator?
+    weak var coordinator: SearchCoordinator?
     
     var collections: [Collection]?
     
@@ -102,6 +102,8 @@ class SearchViewController: UICollectionViewController, UICollectionViewDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.searchController = coordinator?.searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
         DataSource.loadData { (data) in
             self.collections = [self.topGenresCollection, self.browseAllCollection]
             DispatchQueue.main.async {
@@ -134,7 +136,7 @@ class SearchViewController: UICollectionViewController, UICollectionViewDelegate
         } else {
             guard let numberOfPlaylists = collections?[indexPath.row].playlists?.count else {return CGSize.zero}
             
-            let height = self.collectionView.collectionViewLayout.collectionViewContentSize.height
+//            let height = self.collectionView.collectionViewLayout.collectionViewContentSize.height
             return CGSize(width: UIScreen.main.bounds.width, height: CGFloat((numberOfPlaylists / 2) * 120))
         }
     }

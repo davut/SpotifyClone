@@ -10,7 +10,7 @@ import UIKit
 
 class HomeViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, Storyboarded {
 
-    weak var coordinator: MainCoordinator?
+    weak var coordinator: HomeCoordinator?
     var collections: [Collection]?
     
     var gradientLayer: CAGradientLayer = {
